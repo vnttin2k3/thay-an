@@ -16,9 +16,13 @@ navbarToggle.addEventListener('click', () => {
 
 // Close mobile menu when clicking a link
 navbarLinks.forEach(link => {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', (e) => {
     navbarToggle.classList.remove('active');
     navbarMenu.classList.remove('active');
+
+    // Immediately set active state on clicked link
+    navbarLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
   });
 });
 
@@ -39,8 +43,8 @@ window.addEventListener('scroll', () => {
 // Active link highlighting based on scroll position
 const sections = document.querySelectorAll('section');
 const observerOptions = {
-  threshold: 0.3,
-  rootMargin: '-100px 0px -50% 0px'
+  threshold: 0.2,
+  rootMargin: '-80px 0px -60% 0px'
 };
 
 const navObserver = new IntersectionObserver((entries) => {
@@ -65,12 +69,20 @@ sections.forEach(section => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
     if (target) {
       target.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
+
+      // Update URL hash without jumping
+      if (history.pushState) {
+        history.pushState(null, null, targetId);
+      } else {
+        window.location.hash = targetId;
+      }
     }
   });
 });

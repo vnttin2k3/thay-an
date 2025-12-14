@@ -606,6 +606,14 @@
     .why-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .services-grid {
+        gap: var(--spacing-lg);
+    }
+
+    .hero {
+        padding-top: var(--spacing-xl);
+    }
 }
 
 @media (max-width: 768px) {
@@ -640,5 +648,22 @@
 
     .hero-scroll {
         display: none;
+    }
+
+    .hero {
+        padding-top: var(--spacing-lg);
+        min-height: auto;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+
+    .profile-description {
+        font-size: 1rem;
     }
 }

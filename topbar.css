@@ -1,0 +1,78 @@
+/* === TOPBAR === */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-bronze);
+    color: var(--color-white);
+    z-index: 1001;
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+}
+
+.topbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-lg);
+}
+
+.topbar-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.topbar-item:hover {
+    color: var(--color-golden);
+}
+
+.topbar-icon {
+    font-size: 1rem;
+}
+
+/* Adjust navbar for topbar */
+.navbar {
+    top: 36px;
+}
+
+/* Adjust hero for topbar + navbar */
+.hero {
+    margin-top: 106px;
+}
+
+/* Mobile topbar */
+@media (max-width: 768px) {
+    .topbar {
+        font-size: 0.75rem;
+        padding: 0.4rem 0;
+    }
+
+    .topbar-container {
+        gap: var(--spacing-sm);
+        justify-content: center;
+    }
+
+    .topbar-item {
+        font-size: 0.75rem;
+    }
+
+    .topbar-icon {
+        font-size: 0.875rem;
+    }
+
+    .navbar {
+        top: 32px;
+    }
+
+    .hero {
+        margin-top: 102px;
+    }
+}

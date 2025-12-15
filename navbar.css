@@ -98,24 +98,35 @@
 }
 
 .navbar-cta {
-    padding: 0.75rem 1.5rem;
-    background: var(--gradient-golden);
-    color: var(--color-bronze-dark);
-    border-radius: var(--radius-md);
+    padding: 0.75rem 1.75rem;
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+    color: #5D4037;
+    border-radius: 50px;
+    /* Pill shape consistency */
     font-weight: 700;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
     white-space: nowrap;
+    letter-spacing: 0.02em;
 }
 
 .navbar-cta:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-golden);
-    background: linear-gradient(135deg, #FFED4E 0%, #FFD700 100%);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #FFE57F 0%, #FFD700 100%);
+    color: #4E342E;
 }
 
 .navbar-cta.active {
-    background: var(--gradient-golden);
-    box-shadow: var(--shadow-golden);
+    /* Maintain the primary button look even when strictly 'active' in scrollspy */
+    background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+    color: #3E2723;
+}
+
+.navbar-cta:active {
+    transform: translateY(0);
+    background: linear-gradient(135deg, #FFB300 0%, #FFA000 100%);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
 
 .navbar-cta::after {
